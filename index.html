@@ -1,30 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<link rel="stylesheet"  href="css/style.css">
-	<title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bloques de colores · práctica interactiva</title>
+  <meta name="description" content="Agrega y cambia bloques de colores. Forma parejas azules y experimenta con deshacer y rehacer.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/model.js" defer></script>
+  <script src="js/index.js" defer></script>
 </head>
 <body>
-	<header>
-		
-	</header>
-	<article >
-		<button id="btnAdd">add</button>
-		<button id="btnRemoveB">remove blue</button>
-		<button id="btnRemoveG">remove green</button>
-	</article>
-	<article id="container" class="main">
-		<section class="verde">
-			
-		</section>
-		<section class="verde">
-			
-		</section>
-	</article>
-	<footer>
-		
-	</footer>
+  <header class="page-header">
+    <a class="brand" href="./index.html" aria-label="Volver a cargar el tablero inicial">Laboratorio de interacción</a>
+    <span class="badge">Sin conexión · sin cuentas</span>
+  </header>
+  <main>
+    <div class="intro">
+      <p class="eyebrow">UNA PRÁCTICA PARA EXPERIMENTAR</p>
+      <h1>Un clic. Otro color.</h1>
+      <p>Agrega bloques verdes y toca cualquiera para cambiar su color.
+        Cuando formes <strong>dos azules, ambos desaparecerán</strong>.</p>
+    </div>
+    <section class="workspace" aria-labelledby="board-title">
+      <div class="board-heading">
+        <div><h2 id="board-title">Tu tablero</h2><p id="counts">2 bloques · 2 verdes · 0 azules</p></div>
+        <button id="btnAdd" type="button">+ Agregar verde</button>
+      </div>
+      <div class="toolbar" aria-label="Acciones del tablero">
+        <div class="button-group">
+          <button id="btnRemoveG" class="secondary" type="button">Eliminar verdes</button>
+          <button id="btnRemoveB" class="secondary" type="button">Eliminar azules</button>
+        </div>
+        <div class="button-group">
+          <button id="undo" class="secondary" type="button" disabled>Deshacer</button>
+          <button id="redo" class="secondary" type="button" disabled>Rehacer</button>
+          <button id="reset" class="quiet" type="button">Reiniciar</button>
+        </div>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true">Listo. Selecciona un bloque para comenzar.</p>
+      <p class="board-help" id="board-help">Verde ↔ azul. También puedes usar Tab y Enter o Espacio.</p>
+      <ul id="container" class="board" aria-label="Bloques de colores" aria-describedby="board-help"></ul>
+      <div id="empty" class="empty" hidden>
+        <h3>Un tablero en blanco</h3>
+        <p>Agrega un verde para seguir o deshaz la última acción.</p>
+      </div>
+      <p class="limit-hint">Hasta 200 bloques y 100 acciones para deshacer. Puedes deshacer también un reinicio.</p>
+    </section>
+    <aside class="instructions" aria-labelledby="rules-title">
+      <h2 id="rules-title">Prueba, cambia, vuelve atrás.</h2>
+      <ol>
+        <li>Comienzas con dos bloques verdes.</li>
+        <li>Cada bloque alterna entre verde y azul.</li>
+        <li>La segunda selección azul elimina la pareja completa.</li>
+        <li>Los botones de eliminar quitan todos los bloques de ese color.</li>
+      </ol>
+      <p>Los cambios duran mientras esta página permanezca abierta. Al recargar vuelves al inicio.</p>
+    </aside>
+  </main>
+  <footer>Juega con los colores. Tus acciones no se guardan al cerrar o recargar la página.</footer>
+  <noscript><p class="noscript">Activa JavaScript para usar el tablero. No requiere conexión a Internet.</p></noscript>
 </body>
-<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
 </html>

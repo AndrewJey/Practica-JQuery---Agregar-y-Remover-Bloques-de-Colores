@@ -1,0 +1,12 @@
+{
+  "name": "practica-bloques-de-colores",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Práctica de bloques de colores recuperada, sin dependencias de ejecución",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "test": "node --test tests/model.test.cjs",
+    "test:browser": "node --test tests/browser.test.cjs"
+  },
+  "devDependencies": {"playwright": "1.65.1"}
+}

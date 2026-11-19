@@ -78,3 +78,11 @@ local.settings.json
 id_rsa
 id_ed25519
 # local-development:end
+
+# Dependencias de pruebas y resultados locales; la página no requiere npm
+node_modules/
+coverage/
+test-results/
+playwright-report/
+screenshots/
+npm-debug.log*
